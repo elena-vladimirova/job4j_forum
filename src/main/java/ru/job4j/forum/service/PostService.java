@@ -6,6 +6,7 @@ import ru.job4j.forum.store.PostRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostService {
@@ -21,4 +22,13 @@ public class PostService {
         posts.findAll().forEach(rsl::add);
         return rsl;
     }
+
+    public Optional<Post> findById(Long id) {
+        return posts.findById(id);
+    }
+
+    public void create(Post post) {
+        posts.save(post);
+    }
+
 }
