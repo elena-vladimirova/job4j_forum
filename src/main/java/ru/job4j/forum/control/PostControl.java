@@ -23,9 +23,15 @@ public class PostControl {
         return "post";
     }
 
+    @RequestMapping(value="/create", method = RequestMethod.GET)
+    public String save(@ModelAttribute Post post) {
+        return "create";
+    }
+
     @RequestMapping(value="/post/create", method = RequestMethod.POST)
     public String create(@ModelAttribute Post post) {
-        posts.create(post);
-        return "redirect:/post/" + post.getId();
+        //posts.create(post);
+        //return "redirect:/post/" + post.getId();
+        return "redirect:/index";
     }
 }

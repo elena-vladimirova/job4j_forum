@@ -18,6 +18,7 @@
     <div class="row">
         <h4>Форум job4j</h4>
     </div>
+    <a href="<c:url value='/create'/>">Добавить пост</a>
     <div class="row">
         <table class="table">
             <thead>
