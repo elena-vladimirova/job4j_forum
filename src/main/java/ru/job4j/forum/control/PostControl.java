@@ -30,7 +30,7 @@ public class PostControl {
 
     @RequestMapping(value="/post/create", method = RequestMethod.POST)
     public String create(@ModelAttribute Post post) {
-        //posts.create(post);
+        posts.create(post);
         //return "redirect:/post/" + post.getId();
         return "redirect:/index";
     }
