@@ -23,8 +23,8 @@ public class PostService {
         return rsl;
     }
 
-    public Optional<Post> findById(Long id) {
-        return posts.findById(id);
+    public Post findById(Long id) {
+        return posts.findById(id).get();
     }
 
     public void create(Post post) {

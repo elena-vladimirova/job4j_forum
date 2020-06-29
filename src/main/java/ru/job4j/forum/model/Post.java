@@ -9,10 +9,10 @@ import java.util.Objects;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     private String description;
-    private Calendar created;
+    //private Calendar created;
 
     public static Post of(String name) {
         Post post = new Post();
@@ -20,11 +20,11 @@ public class Post {
         return post;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,13 +44,13 @@ public class Post {
         this.description = description;
     }
 
-    public Calendar getCreated() {
+/*    public Calendar getCreated() {
         return created;
     }
 
     public void setCreated(Calendar created) {
         this.created = created;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -59,12 +59,12 @@ public class Post {
         Post post = (Post) o;
         return id == post.id &&
                 Objects.equals(name, post.name) &&
-                Objects.equals(description, post.description) &&
-                Objects.equals(created, post.created);
+                Objects.equals(description, post.description) /*&&
+                Objects.equals(created, post.created)*/;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, created);
+        return Objects.hash(id, name, description/*, created*/);
     }
 }
